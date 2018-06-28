@@ -25,3 +25,6 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+
+# smarty template cache file
+application/views/templates_c/*.php
