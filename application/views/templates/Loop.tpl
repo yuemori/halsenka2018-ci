@@ -1,6 +1,8 @@
 {* Smartyにおけるループ *}
 
 <div>
+  {* forループ（テンプレート内の変数で実行できる） *}
+  {* for i=0; i<5; i++ と同意 *}
   <div>テンプレート内のみでのループ</div>
   {section name=i start=0 loop=5 step=1}
     <div>
