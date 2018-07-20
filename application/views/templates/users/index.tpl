@@ -9,10 +9,12 @@
         </tr>
     </thead>
     <tbody>
+{foreach from=$users item=user}
         <tr>
-            <td>1</td>
-            <td>yuemori</td>
-            <td>yuemori@aiming-inc.com</td>
+            <td>{$user->id}</td>
+            <td>{$user->name}</td>
+            <td>{$user->email}</td>
         </tr>
     </tbody>
+{/foreach}
 </table>
