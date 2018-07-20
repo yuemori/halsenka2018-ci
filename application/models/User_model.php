@@ -14,19 +14,25 @@ class User_model extends CI_Model {
 
 	// ユーザを検索するメソッド
 	public function get_users($count = 10) {
-		// TODO: userテーブルから検索する
-		return array();
+		$query = $this->db->get('user', $count);
+
+		return $query->result('User_model');
 	}
 
 	// 名前でユーザ名を検索するメソッド
 	public function find_users_by_name($name, $count = 10) {
-		// TODO: ユーザ名を条件にuserテーブルから検索する
-		return array();
+		$this->db->where('name', $name);
+		$query = $this->db->get('user', $count);
+
+		return $query->result('User_model');
 	}
 
 	// ユーザを作成するメソッド
 	public function create_user($name, $email) {
-		// TODO: ユーザをuserテーブルに追加する
-		return FALSE;
+		$user = new User_model;
+		$user->name = $name;
+		$user->email = $email;
+
+		return $this->db->insert('user', $user);
 	}
 }
