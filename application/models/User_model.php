@@ -14,8 +14,9 @@ class User_model extends CI_Model {
 
 	// ユーザを検索するメソッド
 	public function get_users($count = 10) {
-		// TODO: userテーブルから検索する
-		return array();
+		$query = $this->db->get('user', $count);
+
+		return $query->result('User_model');
 	}
 
 	// 名前でユーザ名を検索するメソッド
