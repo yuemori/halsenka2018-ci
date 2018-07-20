@@ -1,11 +1,15 @@
 <?php
 
 class User_model extends CI_Model {
+	public $id;
+	public $name;
+	public $email;
+
 	public function __construct()
 	{
 		// CI_Model constructor の呼び出し
 		parent::__construct();
-        $this->load->database();
+		$this->load->database();
 	}
 
 	// ユーザを検索するメソッド
