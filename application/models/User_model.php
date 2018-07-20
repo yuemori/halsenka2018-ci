@@ -27,7 +27,10 @@ class User_model extends CI_Model {
 
 	// ユーザを作成するメソッド
 	public function create_user($name, $email) {
-		// TODO: ユーザをuserテーブルに追加する
-		return FALSE;
+		$user = new User_model;
+		$user->name = $name;
+		$user->email = $email;
+
+		return $this->db->insert('user', $user);
 	}
 }
